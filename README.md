@@ -24,7 +24,7 @@ So you can use any of these names. This documentation and examples in this repos
 Requirements
 ------------
 
- * Ansible version 2.5 or higher.
+ * Ansible version 2.7 or higher.
  * Python SDK version 4.2 or higher.
  * oVirt has to be 4.1 or higher and [ovirt-imageio] must be installed and running.
  * CA certificate of oVirt engine. The path to CA certificate must be specified in the `ovirt_ca` variable.
@@ -56,6 +56,7 @@ Role Variables
 | template_disk_name | UNDEF                 | The name of template disk.  |
 | template_disk_format | UNDEF               | Format of the template disk.  |
 | template_disk_interface | virtio           | Interface of the template disk. |
+| template_seal      | true                  | 'Sealing' erases all machine-specific configurations from a filesystem. Not supported on Windows. Set this to 'false' for Windows.  |
 | template_timeout   | 600                   | Amount of time to wait for the template to be created. |
 | template_type      | UNDEF                 | The type of the template: desktop, server or high_performance (for qcow2 based templates only) |
 | template_nics      | {name: nic1, profile_name: ovirtmgmt, interface: virtio} | List of dictionaries that specify the NICs of template. |
